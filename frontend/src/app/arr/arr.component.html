@@ -1,0 +1,15 @@
+<p>arr works!</p>
+<button (click)="addName()">add
+</button>
+<form [formGroup]="form">
+<div formArrayName="name">
+  <div *ngFor="let nameForm of name.controls; let i = index">
+    <div class="lesson-form-row" [formGroup]="nameForm">
+      <input formControlName="username" placeholder="username">
+      <button class="delete-btn" (click)="deleteName(i)">
+        delete</button>
+    </div>
+  </div>
+</div>
+<button (click)="submit()">Submit</button>
+</form>
