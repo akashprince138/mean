@@ -1,10 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const dbConfig = require("./config/database.config.js");
+// const dbConfig = require("./config/database.config.js");
 const mongoose = require("mongoose");
 var cors = require("cors");
+var url = "'mongodb://localhost:27017/users'";
 mongoose
-  .connect(dbConfig.url, {
+  .connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

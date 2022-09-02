@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.form.value).subscribe((res) => 
             {
               if(res['status'] === "success"){
-                this.router.navigate(['/user-list']);
+                this.router.navigate(['/list']);
               }
             });
   }

@@ -28,7 +28,11 @@ export class LoginService {
     return this.http.post<any>(`${environment.apiUrl}/login`, data, this.httpOptions)
             .pipe(map(user => {
                 localStorage.setItem('currentUser', JSON.stringify(user));
-                localStorage.setItem('token', user.token);
+                let token = '';
+                // if(user?.token){
+                //   token = user.token;  
+                // }
+                // localStorage.setItem('token', token);
                 this.currentUserSubject.next(user);
                 return user;
             }));
